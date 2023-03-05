@@ -9,6 +9,8 @@
 \author{Mohit Tekriwal}
 \date{}
 
+
+
 \begin{document}
 
 \maketitle
@@ -134,41 +136,41 @@ The collector outlet temperature is computed as 53.4179 Celsius, and the collect
 
 \begin{figure}[ht]
 \centering
-\includegraphics[scale = 0.5]{temperature_profile.png}
-\includegraphics[scale =0.5]{temperature_node0.png}
-\includegraphics[scale =0.5]{temperature_node_last.png}
+\includegraphics[scale = 0.5]{figures/temperature_profile.png}
+\includegraphics[scale =0.5]{figures/temperature_node0.png}
+\includegraphics[scale =0.5]{figures/temperature_node_last.png}
 \caption{Plot for temperature profiles corresponding to the discretization of the storage tank by 10 nodes. The first figure illustrates the temperature profile along the tank from top to bottom. The second figure illustrates the variation of temperature for Node 0 with respect to time, and the last figure illustrates the variation of temperature for the last node with respect time. Note that this model accounts for the loss of heat to the surrounding, hence $U \neq 0$}.
 \end{figure}
 
 \begin{figure}[ht]
 \centering
-\includegraphics[scale = 0.5]{temperature_profile_u_0.png}
-\includegraphics[scale =0.5]{temperature_node0_u_0.png}
-\includegraphics[scale =0.5]{temperature_node_last_u_0.png}
+\includegraphics[scale = 0.5]{figures/temperature_profile_u_0.png}
+\includegraphics[scale =0.5]{figures/temperature_node0_u_0.png}
+\includegraphics[scale =0.5]{figures/temperature_node_last_u_0.png}
 \caption{Plot for temperature profiles corresponding to the discretization of the storage tank by 10 nodes. The first figure illustrates the temperature profile along the tank from top to bottom. The second figure illustrates the variation of temperature for Node 0 with respect to time, and the last figure illustrates the variation of temperature for the last node with respect time. Note that this model does not account for the loss of heat to the surrounding, hence $U =  0$}.
 \end{figure}
 
 \begin{figure}[ht]
 \centering
-\includegraphics[scale = 0.5]{temperature_profile_N_20_dt_100.png}
-\includegraphics[scale =0.5]{temperature_node0_N_20_dt_100.png}
-\includegraphics[scale =0.5]{temperature_node_last_N_20_dt_100.png}
+\includegraphics[scale = 0.5]{figures/temperature_profile_N_20_dt_100.png}
+\includegraphics[scale =0.5]{figures/temperature_node0_N_20_dt_100.png}
+\includegraphics[scale =0.5]{figures/temperature_node_last_N_20_dt_100.png}
 \caption{Plot for temperature profiles corresponding to the discretization of the storage tank by 20 nodes. The first figure illustrates the temperature profile along the tank from top to bottom. The second figure illustrates the variation of temperature for Node 0 with respect to time, and the last figure illustrates the variation of temperature for the last node with respect time. Note that this model accounts for the loss of heat to the surrounding, hence $U \neq 0$. Number of time steps is 100. We get numerical instabilities.}
 \end{figure}
 
 \begin{figure}[ht]
 \centering
-\includegraphics[scale = 0.5]{temperature_profile_N_20.png}
-\includegraphics[scale =0.5]{temperature_node0_N_20.png}
-\includegraphics[scale =0.5]{temperature_node_last_N_20.png}
+\includegraphics[scale = 0.5]{figures/temperature_profile_N_20.png}
+\includegraphics[scale =0.5]{figures/temperature_node0_N_20.png}
+\includegraphics[scale =0.5]{figures/temperature_node_last_N_20.png}
 \caption{Plot for temperature profiles corresponding to the discretization of the storage tank by 20 nodes. The first figure illustrates the temperature profile along the tank from top to bottom. The second figure illustrates the variation of temperature for Node 0 with respect to time, and the last figure illustrates the variation of temperature for the last node with respect time. Note that this model accounts for the loss of heat to the surrounding, hence $U \neq 0$. Number of time steps is 1000.}
 \end{figure}
 
 \begin{figure}[ht]
 \centering
-\includegraphics[scale = 0.5]{temperature_profile_N_20_U_0.png}
-\includegraphics[scale =0.5]{temperature_node0_N_20_U_0.png}
-\includegraphics[scale =0.5]{temperature_node_last_N_20_U_0.png}
+\includegraphics[scale = 0.5]{figures/temperature_profile_N_20_U_0.png}
+\includegraphics[scale =0.5]{figures/temperature_node0_N_20_U_0.png}
+\includegraphics[scale =0.5]{figures/temperature_node_last_N_20_U_0.png}
 \caption{Plot for temperature profiles corresponding to the discretization of the storage tank by 20 nodes. The first figure illustrates the temperature profile along the tank from top to bottom. The second figure illustrates the variation of temperature for Node 0 with respect to time, and the last figure illustrates the variation of temperature for the last node with respect time. Note that this model does not account for the loss of heat to the surrounding, hence $U = 0$. Number of time steps is 1000. }
 \end{figure}
 
@@ -176,16 +178,16 @@ The collector outlet temperature is computed as 53.4179 Celsius, and the collect
 
 \begin{figure}[ht]
 \centering
-\includegraphics[scale =0.4]{temperature_node0_N_20_m_25.png}
-\includegraphics[scale =0.4]{temperature_node_last_N_20_m_25.png}
-\includegraphics[scale =0.4]{temperature_node0_N_20_m_100.png}
-\includegraphics[scale =0.4]{temperature_node_last_N_20_m_100.png}
+\includegraphics[scale =0.4]{figures/temperature_node0_N_20_m_25.png}
+\includegraphics[scale =0.4]{figures/temperature_node_last_N_20_m_25.png}
+\includegraphics[scale =0.4]{figures/temperature_node0_N_20_m_100.png}
+\includegraphics[scale =0.4]{figures/temperature_node_last_N_20_m_100.png}
 \caption{Plot for temperature profiles corresponding to the discretization of the storage tank by 20 nodes. Note that this model does not account for the loss of heat to the surrounding, hence $U = 0$. The top left and top right plots correspond to $\dot{m} = 0.25 Kg/s$, while the bottom left and bottom right plots correspond to $\dot{m} = 1.0 Kg/s$. As observed, the time taken for the temperatures in a layer of the tank to remain invariant increases as we increase the mass flow rate. In this example, the time taken for temperature to remain invariant is almost 4 times for $\dot{m} = 0.25 Kg/s$ as compared to $\dot{m} = 1.0 Kg/s$.}
 \end{figure}
 
 \begin{figure}[ht]
 \centering
-\includegraphics{temperature_profile_m_dot.png}
+\includegraphics{figures/temperature_profile_m_dot.png}
 \caption{Plot for temperature profiles corresponding to the discretization of the storage tank by 20 nodes. Note that this model does not account for the loss of heat to the surrounding, hence $U = 0$. This plot illustrates the effect of mass flow rate on the temperature profile of the nodes in the tank.  Plots are shown for $\dot{m} = 0.25 Kg/s$, $\dot{m} = 0.5 Kg/s$, $\dot{m} = 1.0 Kg/s$, and $\dot{m} = 5.0 Kg/s$ from top to bottom. As observed, time taken for the temperatures in the tank to reach a steady state increases as we increase the mass flow rate.  Thus, for a given time horizon, the circulating water gets heated more and has higher temperature for lower mass flow rate, as compared to the higher mass flow rate. }
 \end{figure}
 
