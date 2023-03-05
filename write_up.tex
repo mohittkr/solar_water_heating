@@ -30,7 +30,7 @@ We will assume the following throughout the simulation:
 \end{enumerate}
 
 \subsubsection*{Modeling flow in the storage tank}
-We will model the storage tanks using  $N$ uniform blocks. Each of these blocks therefore has the same area. The upper most block which receives water from the collector will be called as \emph{Node $0$}, while the bottom most block which is connected to the inlet of the collector will be called as \emph{Node $N-1$}.The flow of water is from node $0$ to node $N-1$.  The figure~\ref{fig: heat_tank} illustrates the heat flow inside the stratified tank. The heat transfer equation for each of these block in as illustrated in the figure, is given by:
+We will model the storage tanks using  $N$ uniform blocks. Each of these blocks therefore has the same area. The upper most block which receives water from the collector will be called as \emph{Node $0$}, while the bottom most block which is connected to the inlet of the collector will be called as \emph{Node $N-1$}.The flow of water is from node $0$ to node $N-1$.  The figure~\ref{fig: heat_tank} illustrates the heat flow inside the stratified tank. The heat transfer equation for each of these block in as illustrated in the figure, is given by [1]:
 
 \begin{equation}
 mC_p \frac{dT_{s, i}}{dt} = U_i A_i (T_a - T_{s,i}) + B_c^i \dot{m} C_p (T_c - T_{s,i}) + \gamma_i C_p (T_{s, i-1} - T_{s,i})
@@ -45,7 +45,7 @@ B_c^i =
 \end{cases}
 \end{equation}
 
-$\gamma_i$ is the net flow between the nodes, and is given by the formula:
+$\gamma_i$ is the net flow between the nodes, and is given by the formula [1]:
 \begin{equation}
 \gamma_i = \dot{m} \sum_{j = 1} ^{i-1} B_c^j
 \end{equation}
@@ -64,7 +64,7 @@ The above modeling is generic, where generalization is in terms of the placement
 
 
 \subsubsection*{Heat balance for the collector}
-The useful energy gain, $\dot{Q}_u$ for a flat-plate collector can be computed using the Hottel- Whillier equation:
+The useful energy gain, $\dot{Q}_u$ for a flat-plate collector can be computed using the Hottel- Whillier equation [1]:
 \begin{equation}
 \dot{Q}_u = A_c [F_R (\tau \alpha) I_T- F_R U_L (T_{in} - T_a)] =  \dot{m} C_p (T_c - T_{in})
 \end{equation}
@@ -174,7 +174,12 @@ The collector outlet temperature is computed as 53.4179 Celsius, and the collect
 \caption{Plot for temperature profiles corresponding to the discretization of the storage tank by 20 nodes. The first figure illustrates the temperature profile along the tank from top to bottom. The second figure illustrates the variation of temperature for Node 0 with respect to time, and the last figure illustrates the variation of temperature for the last node with respect time. Note that this model does not account for the loss of heat to the surrounding, hence $U = 0$. Number of time steps is 1000. }
 \end{figure}
 
-
+\begin{figure}[ht]
+\centering
+\includegraphics[scale = 0.5]{figures/temperature_node0_mdot.png}
+\includegraphics[scale = 0.5]{figures/temperature_node_last_mdot.png}
+\caption{Plot for temperature profiles corresponding to the discretization of the storage tank by 20 nodes. Note that this model does not account for the loss of heat to the surrounding, hence $U = 0$. This plot illustrates the effect of mass flow rate on the temperature profile of the nodes in the tank.  Plots are shown for $\dot{m} = 0.25 Kg/s$, $\dot{m} = 0.5 Kg/s$, $\dot{m} = 1.0 Kg/s$, and $\dot{m} = 5.0 Kg/s$ from top to bottom. As observed, time taken for the temperatures in the tank to reach a steady state increases as we increase the mass flow rate.  Thus, for a given time horizon, the circulating water gets heated more and has higher temperature for lower mass flow rate, as compared to the higher mass flow rate. }
+\end{figure}
 
 \begin{figure}[ht]
 \centering
@@ -188,7 +193,7 @@ The collector outlet temperature is computed as 53.4179 Celsius, and the collect
 \begin{figure}[ht]
 \centering
 \includegraphics{figures/temperature_profile_m_dot.png}
-\caption{Plot for temperature profiles corresponding to the discretization of the storage tank by 20 nodes. Note that this model does not account for the loss of heat to the surrounding, hence $U = 0$. This plot illustrates the effect of mass flow rate on the temperature profile of the nodes in the tank.  Plots are shown for $\dot{m} = 0.25 Kg/s$, $\dot{m} = 0.5 Kg/s$, $\dot{m} = 1.0 Kg/s$, and $\dot{m} = 5.0 Kg/s$ from top to bottom. As observed, time taken for the temperatures in the tank to reach a steady state increases as we increase the mass flow rate.  Thus, for a given time horizon, the circulating water gets heated more and has higher temperature for lower mass flow rate, as compared to the higher mass flow rate. }
+\caption{Plot for temperature profiles corresponding to the discretization of the storage tank by 20 nodes. Note that this model does not account for the loss of heat to the surrounding, hence $U = 0$. This plot illustrates the effect of mass flow rate on the temperature profile of the nodes in the tank.  Plots are shown for $\dot{m} = 0.25 Kg/s$, $\dot{m} = 0.5 Kg/s$, $\dot{m} = 1.0 Kg/s$, and $\dot{m} = 5.0 Kg/s$ from top to bottom. As observed, time taken for the temperatures in the tank to reach a steady state increases as we increase the mass flow rate.  Thus, for a given time horizon, the circulating water gets heated more and has higher temperature for lower mass flow rate, as compared to the higher mass flow rate. The temperature profile for different mass flow rates eventually converge to a steady state profile.  }
 \end{figure}
 
 \newpage
@@ -214,7 +219,7 @@ We can study the system by tuning other parameters in the \texttt{global\_variab
 
 
 \subsubsection*{References}
-I mainly followed the masters thesis by Eberhard Markus Kleinbach titled "Performance Study of One-Dimensional Models for Stratified Thermal Storage Tank": \url{https://doi.org/10.1016/0038-092X(93)90087-5}.
+[1]I mainly followed the masters thesis by Eberhard Markus Kleinbach titled "Performance Study of One-Dimensional Models for Stratified Thermal Storage Tank": \url{https://doi.org/10.1016/0038-092X(93)90087-5}.
 
 \end{document}
 
